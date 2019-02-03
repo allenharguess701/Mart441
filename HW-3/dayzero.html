@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allen Harguess</title>
+<link href="style/style2.css" rel="stylesheet" type="text/css">
+
+<script>
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+
+       var question = getQueryVariable("question")
+       var option = getQueryVariable("option")
+}
+</script>
+
+<script>
+    function doSomething() {
+      var question = getQueryVariable("question")
+      var option = getQueryVariable("option")
+      
+      if (question == 1) {
+            var myPara  = 'Day Zero-<br><br>The last day of the world created by man and the first day of the world survived by him. Can you survive the onslaught of the infected? walkers hell bent on one thing; feeding.<br><br>Day Zero is a first person text/decision based game that will take you through a dangerzone zombies, death, and survival. <br>Just you, your survival, and a buttload of zombies. Do you have what it takes to make the hard decisions? <br><br>Can you survive what is coming? <br>What will your ultimate fate be as you take your place in this new world of the strife, brains, and the undead?<br><br><center><img src="images/fbcrusty.jpg" alt="Crusty Da Clown"></center><br><br>Your survival begins now-<br><br>';
+
+            myPara += 'You find yourself sitting in a busy international air port waiting for your flight. For the past few days the local news has been abuze with reports of people going mad and committing acts of violence. You are sitting in a lounge sipping a drink and watich the latest about the outbreak.<br><br>In the distance you hear a commotion. people screaming and what seems to be small arms fire.<br><br>suddenly dozens of frightened people come running by. Terror fueling their haste.<br><br><br><br><center>&nbsp;&nbsp;What is your first thought?<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="dayzero.html?question=1&option=1">Ignore the disturbance. Finsh your drink. It is really great.</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="dayzero.html?question=1&option=2">Gulp down the last of your drink and get moving towards your boarding gate.</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="dayzero.html?question=1&option=3">Step outside the lounge to get a better look at what is going on outside.</a><br></center><br><br><br><br>';
+
+      window.document.write(myPara);
+      }
+    }
+</script>
+
+</head>
+
+<body>
+
+<div class="container clearfix">
+    <header id="banner" class="fluid">
+        <div id="phonebanner" class="fluid"><img src="images/dzheader480.png" alt=""/></div>
+        <div id="desktopbanner" class="fluid"><img src="images/dzheader1232.png" alt=""/></div>
+        <div id="tabletbanner" class="fluid"><img src="images/dzheader786.png" alt=""/></div>
+    </header>
+
+    <nav id="hnav" class="fluid">
+        <ul class="fluid fluidList mainnav">
+        <li class="fluid menuitem zeroMargin_tablet zeroMargin_desktop">
+          <a href="index.html">HOME</a></li>
+        <li class="fluid menuitem">DAY ZERO</li>
+        <li class="fluid menuitem"><a href="dayzero.html">CONTROLS</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">SAVE GAME</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">MEDIA</a></li>
+        </ul>
+    </nav>
+
+    <div id="item1" class="fluid"><br>
+
+      <script>
+        getQueryVariable(variable)
+        doSomething(variable);
+      </script>
+
+      <br><br>
+
+    </div>
+
+    <footer id="copyright" class="fluid">
+        Harguess.com Copyright 2019 All Rights Reserved<br>
+    </footer>
+    <div id="spacer" class="fluid">
+        <center><img src="images/hh-sig.png" alt="My Signature"/></center>
+    </div>
+</div>
+
+</body>
+</html>
