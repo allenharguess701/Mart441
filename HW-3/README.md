@@ -1,5 +1,5 @@
 # Mart441
-# Homework Assignment 1
+# Homework Assignment 3
 ## Allen Harguess
 
 The viewable version of this assignment is at [HW-3](https://allenharguess701.github.io/Mart441/HW-3/)
