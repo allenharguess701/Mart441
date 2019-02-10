@@ -1,0 +1,222 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day Zero</title>
+<link href="style/style2.css" rel="stylesheet" type="text/css">
+
+<script>
+    function getChoice1()
+    {
+        var myChoice = document.getElementById("choice").value;
+        var myQuestion = document.getElementById("question");
+        if(myChoice === "Look")
+        {
+            document.getElementById("choice").style.display="none";
+            document.getElementById("btnSubmit").style.display="none";
+
+            document.getElementById("choice2").style.display="block";
+            document.getElementById("btnSubmit2").style.display="block";
+
+            myQuestion.innerHTML = "As you move to see what's going on outside the lounge you see several crazed individuals attacking other people. The violence is slowly making its way towards you. One rather large man covered in blood notices you.";
+        }
+        else if(myChoice === "Leave")
+        {
+            document.getElementById("choice").style.display="none";
+            document.getElementById("btnSubmit").style.display="none";
+
+            myQuestion.innerHTML = "You slowly get up from your seat having finished your drink. Several crazed individuals dart in and begin attacking people. within seconds the place is filled with infected crazed people and you are set upon by several of them. You died-";
+        }
+        else if(myChoice === "Ignore")
+        {
+            document.getElementById("choice").style.display="none";
+            document.getElementById("btnSubmit").style.display="none";
+
+            myQuestion.innerHTML = "As you sit there enjoying your drink several crazed individuals dart in and begin attacking people. within seconds the place is filled with infected crazed people and you are set upon by several of them. You died-";
+        }
+        else
+        {
+            myQuestion.innerHTML = "Invalid answer";
+        }
+
+    }
+    function getChoice2()
+    {
+        var action1 = document.getElementById("choice2").value;
+        var myQuestion = document.getElementById("question");
+
+        if(action1 === "Run")
+        {
+          document.getElementById("choice2").style.display="none";
+          document.getElementById("btnSubmit2").style.display="none";
+
+          document.getElementById("choice3").style.display="block";
+          document.getElementById("btnSubmit3").style.display="block";
+
+          myQuestion.innerHTML = "The giant of a man hurries after you but you qiuckly leave him behind as you head for the loading gate. Ahead of you see a couple people peering around the corner of a wall. They are obviously hiding from something. Ask them whats going on or join in their quiet observations";
+        }
+		else if(action1 === "Fight")
+        {
+          document.getElementById("choice2").style.display="none";
+          document.getElementById("btnSubmit2").style.display="none";
+
+          myQuestion.innerHTML = "The guy is huge. He quickly overpowers you and bites a huge chunk out of your neck. You died-";
+        }
+    }
+
+    function getChoice3()
+    {
+        var action2 = document.getElementById("choice3").value;
+        var myQuestion = document.getElementById("question");
+        if(action2 === "Observe")
+        {
+            document.getElementById("choice3").style.display="none";
+            document.getElementById("btnSubmit3").style.display="none";
+
+            document.getElementById("choice4").style.display="block";
+            document.getElementById("btnSubmit4").style.display="block"
+
+            myQuestion.innerHTML = "You quietly peer around the corner to see a dozen more crazies all munching on a dead airport worker. A flight attendant motions to you from the loading platform past the dinner scene. do you make a run for it and board the aircraft or use one of the other onlookers as a deversion?";
+        }
+        else if(action2 === "Ask")
+        {
+          document.getElementById("choice3").style.display="none";
+          document.getElementById("btnSubmit3").style.display="none";
+
+          myQuestion.innerHTML = "Your voice gathers the attention of the crazies around the corner. They rush you swaming the hiding onlookers and you. quickly you are all killed. You died-";
+        }
+    }
+    function getChoice4()
+    {
+        var action3 = document.getElementById("choice4").value;
+        var myQuestion = document.getElementById("question");
+        if(action3 === "Bolt")
+        {
+          document.getElementById("choice4").style.display="none";
+          document.getElementById("btnSubmit4").style.display="none";
+
+          myQuestion.innerHTML = "You run as fast as you can to get to the loading platform but are quicky intercepted.the others do nothing but watch you die. You died-";
+        }
+        else if(action3 === "Diversion")
+        {
+          document.getElementById("choice4").style.display="none";
+          document.getElementById("btnSubmit4").style.display="none";
+
+          document.getElementById("choice5").style.display="block";
+          document.getElementById("btnSubmit5").style.display="block"
+
+          myQuestion.innerHTML = "Grabbing one of the other onlookers by the shoulders, you chucker her into the room. The crazies are on her in an instant and as she fights for her life you make a run for it. Do you take a round about way around the carnage or just barrel past the grizzly site?";
+        }
+    }
+    function getChoice5()
+    {
+        var action4 = document.getElementById("choice5").value;
+        var myQuestion = document.getElementById("question");
+        if(action4 === "Barrel")
+        {
+          document.getElementById("choice5").style.display="none";
+          document.getElementById("btnSubmit5").style.display="none";
+
+            myQuestion.innerHTML = "As you barrel past the crazies devowering the girl she looks up at you with puzzleled eyes. As you make eye contact she reaches out and with one last effort grabbs hold of your ankle tripping you. You do a face plant the crazies are on you. You died-";
+        }
+        else if(action4 === "Roundabout")
+        {
+          document.getElementById("choice5").style.display="none";
+          document.getElementById("btnSubmit5").style.display="none";
+
+          document.getElementById("choice6").style.display="block";
+          document.getElementById("btnSubmit6").style.display="block"
+
+          myQuestion.innerHTML = "Your roundabout path is slow but allows you to safely make it to the loading platform, but not before two crazies lurch up from the meal you just gave them and give chase. Do you continue running past the flight attendant and board the aircraft or continue down the hall of the airport towards the exit?";
+        }
+    }
+    function getChoice6()
+    {
+        var action5 = document.getElementById("choice6").value;
+        var myQuestion = document.getElementById("question");
+        if(action5 === "Board")
+        {
+          document.getElementById("choice6").style.display="none";
+          document.getElementById("btnSubmit6").style.display="none";
+
+          myQuestion.innerHTML = "Boh you and the fight attendant rush for the door of the aircraft. the pilot and co-pilot slam it shut behind you jst in time. minutes later you're on the runway taking off. Congrats! You lived!";
+        }
+        else if(action5 === "Exit")
+        {
+          document.getElementById("choice6").style.display="none";
+          document.getElementById("btnSubmit6").style.display="none";
+
+          myQuestion.innerHTML = "You rush down the hall with two crazies in hot pursuit. In the distance you can see the exit out past the security station. As you pass the station two more crazies crash into you from your right knocking you too the ground and lunch ensues. You died-";
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+<div class="container clearfix">
+    <header id="banner" class="fluid">
+        <div id="phonebanner" class="fluid"><img src="images/dzheader480.png" alt=""/></div>
+        <div id="desktopbanner" class="fluid"><img src="images/dzheader1232.png" alt=""/></div>
+        <div id="tabletbanner" class="fluid"><img src="images/dzheader786.png" alt=""/></div>
+    </header>
+
+    <nav id="hnav" class="fluid">
+        <ul class="fluid fluidList mainnav">
+        <li class="fluid menuitem zeroMargin_tablet zeroMargin_desktop">
+          <a href="index.html">HOME</a></li>
+        <li class="fluid menuitem">DAY ZERO</li>
+        <li class="fluid menuitem"><a href="dayzero.html">CONTROLS</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">SAVE GAME</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">MEDIA</a></li>
+        </ul>
+    </nav>
+
+    <div id="item1" class="fluid"><br>
+      <div id="question">
+        Day Zero-<br><br>The last day of the world created by man and the first day of the world survived by him. Can you survive the onslaught of the infected? walkers hell bent on one thing; feeding.<br><br>Day Zero is a first person text/decision based game that will take you through a dangerzone zombies, death, and survival. <br>Just you, your survival, and a buttload of zombies. Do you have what it takes to make the hard decisions? <br><br>Can you survive what is coming? <br>What will your ultimate fate be as you take your place in this new world of the strife, brains, and the undead?<br><br><center><img src="images/fbcrusty.jpg" alt="Crusty Da Clown"></center><br><br>Your survival begins now-<br><br>
+
+        You find yourself sitting in a busy international air port waiting for your flight. For the past few days the local news has been abuze with reports of people going mad and committing acts of violence. You are sitting in a lounge sipping a drink and watich the latest about the outbreak.<br><br>In the distance you hear a commotion. people screaming and what seems to be small arms fire.<br><br>suddenly dozens of frightened people come running by. Terror fueling their haste.<br><br><br><br><center>
+
+        What is your first thought? (Copy and Paste)</center><br><br>
+        <font color=ff0000>
+        Ignore the disturbance and finsh your drink.<br>
+        Gulp down the last of your drink and get moving towards your boarding gate.<br>
+        Step outside the lounge to get a better look at what is going on outside.
+        </font><br><br>
+    </div>
+        <br><br>
+        <input type="text" size="30" id="choice" value="Ignore, Leave, Look">
+        <button id="btnSubmit" onclick="getChoice1();">MAKE YOUR CHOICE</button>
+
+        <input type="text" size="30" id="choice2" value="Fight or Run" style="display:none">
+        <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">MAKE YOUR CHOICE</button>
+
+        <input type="text" size="30" id="choice3" value="Ask or Observe"  style="display:none">
+        <button id="btnSubmit3" onclick="getChoice3();" style="display:none">MAKE YOUR CHOICE</button>
+
+        <input type="text" size="30" id="choice4" value="Bolt or Diversion"  style="display:none">
+        <button id="btnSubmit4" onclick="getChoice4();" style="display:none">MAKE YOUR CHOICE</button>
+
+        <input type="text" size="30" id="choice5" value="Roundabout or Barrel"  style="display:none">
+        <button id="btnSubmit5" onclick="getChoice5();" style="display:none">MAKE YOUR CHOICE</button>
+
+        <input type="text" size="30" id="choice6" value="Board or Exit"  style="display:none">
+        <button id="btnSubmit6" onclick="getChoice6();" style="display:none">MAKE YOUR CHOICE</button>
+
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <footer id="copyright" class="fluid">
+        Harguess.com Copyright 2019 All Rights Reserved<br>
+    </footer>
+    <div id="spacer" class="fluid">
+        <center><img src="images/hh-sig.png" alt="My Signature"/></center>
+    </div>
+</div>
+
+</body>
+</html>
