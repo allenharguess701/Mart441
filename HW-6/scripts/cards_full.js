@@ -28,15 +28,8 @@ function flipcard(number) { document.getElementById(cardids[number]).src= thecar
 function addToPlayer()
 {
     var firstName = document.getElementById("fname").value;
-    var lastName = document.getElementById("lname").value;
-    var age = document.getElementById("age").value;
-    console.log(firstName);
-    console.log(lastName);
-    console.log(age);
-
+    //console.log(firstName);
     player.firstname = firstName;
-    player.lastname = lastName;
-    player.age = age;
     localStorage.setItem("playerInfo", JSON.stringify(player));
     window.location = "matching_full.html";
 }
