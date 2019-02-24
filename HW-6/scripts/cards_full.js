@@ -1,5 +1,5 @@
 var imageNames = ["image1", "image2", "image3", "image4"];
-var blankImagePath = "images/gofish.jpg";
+var blankImagePath = "images/back.png";
 var firstNumber = -1;
 var secondNumber = -1;
 // JSON declaration
@@ -25,7 +25,7 @@ function printBlanks()
 function createRandomImageArray()
 {
     // create an array of actual images
-    var actualImagePath = ["images/dog.jpg", "images/tiger.jpeg"];
+    var actualImagePath = ["images/1.png", "images/2.png"];
     // create another array to make sure the images only get added twice
     var count = [0,0];
     // create a while statement to check to see if our actual image array is full
