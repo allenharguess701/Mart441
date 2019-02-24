@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day Zero</title>
+<link href="style/style2.css" rel="stylesheet" type="text/css">
+
+<script src="scripts/cards_full.js"></script>
+
+</head>
+
+<body onload="cardbacks();playerInfo();">
+
+<div class="container clearfix">
+    <header id="banner" class="fluid">
+        <div id="phonebanner" class="fluid"><img src="images/dzheader480.png" alt=""/></div>
+        <div id="desktopbanner" class="fluid"><img src="images/dzheader1232.png" alt=""/></div>
+        <div id="tabletbanner" class="fluid"><img src="images/dzheader786.png" alt=""/></div>
+    </header>
+
+    <nav id="hnav" class="fluid">
+        <ul class="fluid fluidList mainnav">
+        <li class="fluid menuitem zeroMargin_tablet zeroMargin_desktop">
+          <a href="index.html">HOME</a></li>
+        <li class="fluid menuitem">MEMORY ++</li>
+        <li class="fluid menuitem"><a href="#">RULES</a></li>
+        <li class="fluid menuitem"><a href="#">SAVE GAME</a></li>
+        <li class="fluid menuitem"><a href="#">MEDIA</a></li>
+        </ul>
+    </nav>
+
+    <div id="item1" class="fluid"><br>
+      
+			<div class="board">
+				<div class="boardrow">
+					<div class="card"><img src="" id="card1" width="200" height="250" onclick="flipcard(0);"></div>
+					<div class="card"><img src="" id="card2" width="200" height="250" onclick="flipcard(1);"></div>
+				</div>
+				<div class="boardrow">
+					<div class="card"><img src="" id="card3" width="200" height="250" onclick="flipcard(2);"></div>
+					<div class="card"><img src="" id="card4" width="200" height="250" onclick="flipcard(3);"></div>
+				</div>
+			</div>
+			
+      </div>
+
+    </div>
+
+    <footer id="copyright" class="fluid">
+        Harguess.com Copyright 2019 All Rights Reserved<br>
+    </footer>
+    <div id="spacer" class="fluid">
+        <center><img src="images/hh-sig.png" alt="My Signature"/></center>
+    </div>
+</div>
+
+</body>
+</html>
