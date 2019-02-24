@@ -3,11 +3,11 @@ var cardids = ["card1", "card2", "card3", "card4"];
 var cardback = "images/back.png";
 var thecards = new Array();
 
-// functions ///////////////////////////////////////////////////////////////////    
+// functions ///////////////////////////////////////////////////////////////////
 function cardbacks()
 {
     randomcards();
-    for(var i = 0; i < cardids.length; i++) { document.getElementById(cardids[i]).src= cardback; } 
+    for(var i = 0; i < cardids.length; i++) { document.getElementById(cardids[i]).src= cardback; }
 }
 
 function randomcards()
@@ -18,8 +18,7 @@ function randomcards()
     {
         var randomNumber = Math.floor(Math.random() * actualcards.length)
         if(count[randomNumber] < 2) { thecards.push(actualcards[randomNumber]); count[randomNumber] = count[randomNumber] + 1; }
-    }  
+    }
 }
 
 function flipcard(number) { document.getElementById(cardids[number]).src= thecards[number]; }
-
