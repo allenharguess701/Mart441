@@ -54,9 +54,7 @@ function flipcard(number)
         firstNumber = -1;
         secondNumber = -1;
     }
-    
-   
-
+      
 }
 
 function imagesDisappear()
@@ -73,8 +71,14 @@ function imagesDisappear()
 function addToPlayer()
 {
     var firstName = document.getElementById("txtFirstName").value;
+    var lastName = document.getElementById("txtLastName").value;
+    var playerAge = document.getElementById("txtAge").value;
     console.log(firstName);
+    console.log(lastName);
+    console.log(playerAge);
     player.firstname = firstName;
+    player.lastName = lastName;
+	player.playerAge = playerAge;
     localStorage.setItem("playerInfo", JSON.stringify(player));
     window.location = "matching_full.html";
 }
@@ -84,6 +88,6 @@ function playerInfo()
 {
     var playerInformation = localStorage.getItem("playerInfo");
     player = JSON.parse(playerInformation);
-    console.log(player.firstname);
+    console.log(player.first;name)
    
 }
