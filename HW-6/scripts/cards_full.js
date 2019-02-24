@@ -9,7 +9,7 @@ var player = {"firstname":"", "lastname":"", "age":"", "score":""};
 // create a variable with the blank image name
 // create a empty array for the actual images
 var actualImages = new Array();
-
+    
 function printBlanks()
 {
    // call our random image creation function
@@ -17,16 +17,16 @@ function printBlanks()
     // create a for loop
     for(var i = 0; i < imageNames.length; i++)
     {
-    // iterate through the image tag ids and sets the source
+    // iterate through the image tag ids and sets the source 
         document.getElementById(imageNames[i]).src= blankImagePath;
     }
-
+         
 }
 
 function createRandomImageArray()
 {
     // create an array of actual images
-    var actualImagePath = ["images/dog.jpg", "images/tiger.jpeg"];
+    var actualImagePath = ["images/1.png", "images/2.png"];
     // create another array to make sure the images only get added twice
     var count = [0,0];
     // create a while statement to check to see if our actual image array is full
@@ -42,24 +42,24 @@ function createRandomImageArray()
             // then add one to the array that makes sure only two images can be added
             count[randomNumber] = count[randomNumber] + 1;
         }
-    }
+    }   
 }
 
 function flipImage(number)
 {
-
+    
     // make the second image appear
     if(firstNumber >= 0)
     {
         secondNumber = number;
         document.getElementById(imageNames[number]).src = actualImages[secondNumber];
-
+        
     }
     else if(firstNumber < 0) // make the first image appear
     {
         firstNumber = number;
         document.getElementById(imageNames[firstNumber]).src= actualImages[firstNumber];
-
+    
     }
 
     // check to see if the images do not match
@@ -73,7 +73,7 @@ function flipImage(number)
         firstNumber = -1;
         secondNumber = -1;
     }
-
+    
 }
 
 function imagesDisappear()
@@ -102,5 +102,5 @@ function playerInfo()
     var playerInformation = localStorage.getItem("playerInfo");
     player = JSON.parse(playerInformation);
     console.log(player.firstname);
-
+   
 }
