@@ -1,9 +1,10 @@
 var imageNames = ["image1", "image2", "image3", "image4"];
-var blankImagePath = "images/gofish.jpg";
+var blankImagePath = "images/back.png";
 var firstNumber = -1;
 var secondNumber = -1;
 // JSON declaration
-var player = {"firstname":"", "lastname":""};
+var trysNumber = 0;
+var player = {"firstname":"", "lastname":"", "age":"", "score":""};
 
 // create a variable with the blank image name
 // create a empty array for the actual images
@@ -73,8 +74,6 @@ function flipImage(number)
         secondNumber = -1;
     }
     
-   
-
 }
 
 function imagesDisappear()
@@ -94,7 +93,7 @@ function addToPlayer()
     //console.log(firstName);
     player.firstname = firstName;
     localStorage.setItem("playerInfo", JSON.stringify(player));
-    window.location = "HWExample.html";
+    window.location = "matching_full.html";
 }
 
 // get the information out of JSON
