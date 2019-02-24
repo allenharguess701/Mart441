@@ -1,34 +1,54 @@
-// variables ///////////////////////////////////////////////////////////////////
-var cardids = ["card1", "card2", "card3", "card4"];
-var cardback = "images/back.png";
-
+var imageNames = ["image1", "image2", "image3", "image4"];
+var blankImagePath = "images/back.png";
 var firstNumber = -1;
 var secondNumber = -1;
 var trysNumber = 0;
+
 var player = {"firstname":"", "lastname":"", "age":"", "score":""};
 
-var thecards = new Array();
+// create a variable with the blank image name
+// create a empty array for the actual images
+var actualImages = new Array();
 
-// functions ///////////////////////////////////////////////////////////////////
-function cardbacks()
+function printBlanks()
 {
-    randomcards();
-    for(var i = 0; i < cardids.length; i++) { document.getElementById(cardids[i]).src= cardback; }
+   // call our random image creation function
+    createRandomImageArray();
+    // create a for loop
+    for(var i = 0; i < imageNames.length; i++)
+    {
+    // iterate through the image tag ids and sets the source
+        document.getElementById(imageNames[i]).src= blankImagePath;
+    }
+
 }
 
-function randomcards()
+function createRandomImageArray()
 {
-    var actualcards = ["images/1.png", "images/2.png"];
+    // create an array of actual images
+    var actualImagePath = ["images/dog.jpg", "images/tiger.jpeg"];
+    // create another array to make sure the images only get added twice
     var count = [0,0];
-    while(thecards.length < 4)
+    // create a while statement to check to see if our actual image array is full
+    while(actualImages.length < 4)
     {
-        var randomNumber = Math.floor(Math.random() * actualcards.length)
-        if(count[randomNumber] < 2) { thecards.push(actualcards[randomNumber]); count[randomNumber] = count[randomNumber] + 1; }
+        // get a random number between 0 and the number total number of images that we can choose from
+        var randomNumber = Math.floor(Math.random() * actualImagePath.length)
+          // create an if statement that says if the total number added is less than 2, then
+        // add the image to the actual image array
+        if(count[randomNumber] < 2)
+        {
+            actualImages.push(actualImagePath[randomNumber]);
+            // then add one to the array that makes sure only two images can be added
+            count[randomNumber] = count[randomNumber] + 1;
+        }
     }
 }
 
-function flipcard(number) {
+function flipImage(number)
+{
 
+    // make the second image appear
     if(firstNumber >= 0)
     {
         secondNumber = number;
@@ -45,16 +65,12 @@ function flipcard(number) {
     // check to see if the images do not match
     if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
-		//set number of trys
-
-        setTimeout(imagesDisappear, 2000); // calls a method after 1 second
+        setTimeout(imagesDisappear, 1000); // calls a method after 1 second
     }
     // check to see if the images do match
     else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
-        //set number of trys and add to score
-
-		firstNumber = -1;
+        firstNumber = -1;
         secondNumber = -1;
     }
 
@@ -63,27 +79,24 @@ function flipcard(number) {
 function imagesDisappear()
 {
 
+    console.log(firstNumber);
     document.getElementById(imageNames[firstNumber]).src = blankImagePath;
     document.getElementById(imageNames[secondNumber]).src = blankImagePath;
     firstNumber = -1;
     secondNumber = -1;
 }
 
-// store player info
+// add to the JSON from the textboxes
 function addToPlayer()
 {
-    var firstName = document.getElementById("fname").value;
-    var lastame = document.getElementById("lname").value;
-    var age = document.getElementById("age").value;
-
+    var firstName = document.getElementById("txtFirstName").value;
+    //console.log(firstName);
     player.firstname = firstName;
-    player.lastname = lastame;
-    player.age = age;
     localStorage.setItem("playerInfo", JSON.stringify(player));
     window.location = "matching_full.html";
 }
 
-// get player information
+// get the information out of JSON
 function playerInfo()
 {
     var playerInformation = localStorage.getItem("playerInfo");
