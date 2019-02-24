@@ -80,7 +80,7 @@ function addToPlayer()
     player.lastname = lastame;
     player.age = age;
     localStorage.setItem("playerInfo", JSON.stringify(player));
-    window.location = "HWExample.html";
+    window.location = "matching_full.html";
 }
 
 // get player information 
