@@ -1,34 +1,55 @@
-// variables ///////////////////////////////////////////////////////////////////
-var cardids = ["card1", "card2", "card3", "card4"];
-var cardback = "images/back.png";
-var thecards = new Array();
-
+var imageNames = ["image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8"];
+var blankImagePath = "images/back.png";
 var firstNumber = -1;
 var secondNumber = -1;
+var score = 0;
+var numtries = 0;
+var goodtries = 0;
+
 // JSON declaration
-var player = {"firstname":"", "lastname":""};
+var player = {"firstname":"", "lastname":"", "age":"", "numtries":""};
 
-// functions ///////////////////////////////////////////////////////////////////    
-function cardbacks()
-{
-    randomcards();
-    for(var i = 0; i < cardids.length; i++) { document.getElementById(cardids[i]).src= cardback; } 
-}
-
-function randomcards()
-{
-    var actualcards = ["images/1.png", "images/2.png"];
-    var count = [0,0];
-    while(thecards.length < 4)
-    {
-        var randomNumber = Math.floor(Math.random() * actualcards.length)
-        if(count[randomNumber] < 2) { thecards.push(actualcards[randomNumber]); count[randomNumber] = count[randomNumber] + 1; }
-    }  
-}
-
-function flipcard(number)
-{
+// create a variable with the blank image name
+// create a empty array for the actual images
+var actualImages = new Array();
     
+function printBlanks()
+{
+   // call our random image creation function
+    createRandomImageArray();
+    // create a for loop
+    for(var i = 0; i < imageNames.length; i++)
+    {
+    // iterate through the image tag ids and sets the source 
+        document.getElementById(imageNames[i]).src= blankImagePath;
+    }
+         
+}
+
+function createRandomImageArray()
+{
+    // create an array of actual images
+    var actualImagePath = ["images/1.png", "images/2.png", "images/3.png", "images/4.png"];
+    // create another array to make sure the images only get added twice
+    var count = [0,0,0,0];
+    // create a while statement to check to see if our actual image array is full
+    while(actualImages.length < 8)
+    {
+        // get a random number between 0 and the number total number of images that we can choose from
+        var randomNumber = Math.floor(Math.random() * actualImagePath.length)
+          // create an if statement that says if the total number added is less than 2, then
+        // add the image to the actual image array
+        if(count[randomNumber] < 2)
+        {
+            actualImages.push(actualImagePath[randomNumber]);
+            // then add one to the array that makes sure only two images can be added
+            count[randomNumber] = count[randomNumber] + 1;
+        }
+    }   
+}
+
+function flipImage(number)
+{     
     // make the second image appear
     if(firstNumber >= 0)
     {
@@ -46,21 +67,37 @@ function flipcard(number)
     // check to see if the images do not match
     if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
+		numtries = numtries + 1;
+		//return numtries;
+		console.log(numtries);
+	
         setTimeout(imagesDisappear, 1000); // calls a method after 1 second
     }
     // check to see if the images do match
     else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
-        firstNumber = -1;
+		numtries = numtries + 1;
+		//return numtries;
+		console.log(numtries);
+	
+		goodtries = goodtries + 1;
+		console.log(goodtries);
+		
+		if (goodtries >3){
+			gamedone();
+		}
+		
+	    firstNumber = -1;
         secondNumber = -1;
     }
-      
+    
+   
+
 }
 
 function imagesDisappear()
 {
 
-    console.log(firstNumber);
     document.getElementById(imageNames[firstNumber]).src = blankImagePath;
     document.getElementById(imageNames[secondNumber]).src = blankImagePath;
     firstNumber = -1;
@@ -71,16 +108,21 @@ function imagesDisappear()
 function addToPlayer()
 {
     var firstName = document.getElementById("txtFirstName").value;
-    var lastName = document.getElementById("txtLastName").value;
-    var playerAge = document.getElementById("txtAge").value;
-    console.log(firstName);
-    console.log(lastName);
-    console.log(playerAge);
     player.firstname = firstName;
-    player.lastName = lastName;
-	player.playerAge = playerAge;
     localStorage.setItem("playerInfo", JSON.stringify(player));
-    window.location = "matching_full.html";
+	    window.location = "matching_full.html";
+	var lastName = document.getElementById("txtLastName").value;
+	player.lastname = lastName;    
+    localStorage.setItem("playerInfo", JSON.stringify(player));
+	    window.location = "matching_full.html";
+	var playerAge = document.getElementById("txtAge").value;	
+	player.age = playerAge;	
+    localStorage.setItem("playerInfo", JSON.stringify(player));
+    	window.location = "matching_full.html";
+
+	console.log(firstName);
+	console.log(lastName);
+	console.log(playerAge);
 }
 
 // get the information out of JSON
@@ -88,6 +130,29 @@ function playerInfo()
 {
     var playerInformation = localStorage.getItem("playerInfo");
     player = JSON.parse(playerInformation);
-    console.log(player.first;name)
-   
+    
+	console.log(player.firstname);
+    console.log(player.lastname);
+	console.log(player.age);
+	console.log(player.numtries);
+}
+
+function gamedone() 
+{
+    player.numtries = numtries;
+    localStorage.setItem("playerInfo", JSON.stringify(player));
+    window.location = "matching_end.html";
+    console.log(player.numtries);
+}
+
+function results() 
+{
+    var playerInformation = localStorage.getItem("playerInfo");
+    player = JSON.parse(playerInformation);
+	console.log(player.firstname);
+    console.log(player.lastname);
+	console.log(player.age);
+	console.log(player.numtries);
+    document.getElementById("results").innerHTML = "Congratulations " + player.firstname + " " + player.lastname
+    + ". Aged" + "  " + player.age + " Years. you matched them all! You did it in " + "  " + player.numtries + " " + "guesses!"
 }

@@ -2,16 +2,16 @@
 
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Memory Game</title></title>
+<title>Matching Game Full</title>
 <link href="style/style2.css" rel="stylesheet" type="text/css">
-
 <script src="scripts/cards_full.js"></script>
 
 </head>
 
-<body onload="cardbacks(); playerInfo();">
+<body onload="printBlanks();playerInfo();">
 
 <div class="container clearfix">
     <header id="banner" class="fluid">
@@ -25,27 +25,29 @@
         <li class="fluid menuitem zeroMargin_tablet zeroMargin_desktop">
           <a href="index.html">HOME</a></li>
         <li class="fluid menuitem">MEMORY ++</li>
-        <li class="fluid menuitem"><a href="#">RULES</a></li>
-        <li class="fluid menuitem"><a href="#">SAVE GAME</a></li>
-        <li class="fluid menuitem"><a href="#">MEDIA</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">RULES</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">SAVE GAME</a></li>
+        <li class="fluid menuitem"><a href="dayzero.html">MEDIA</a></li>
         </ul>
     </nav>
 
     <div id="item1" class="fluid"><br>
-      
-			<div class="board">
-				<div class="boardrow">
-					<div class="card"><img src="" id="card1" width="200" height="250" onclick="flipcard(0);"></div>
-					<div class="card"><img src="" id="card2" width="200" height="250" onclick="flipcard(1);"></div>
-				</div>
-				<div class="boardrow">
-					<div class="card"><img src="" id="card3" width="200" height="250" onclick="flipcard(2);"></div>
-					<div class="card"><img src="" id="card4" width="200" height="250" onclick="flipcard(3);"></div>
-				</div>
-			</div>
-			
-      </div>
 
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell"><img src="" id="image1" width="250" height="200" onclick="flipImage(0);"></div>
+                <div class="divTableCell"><img src="" id="image2" width="250" height="200" onclick="flipImage(1);"></div>
+                <div class="divTableCell"><img src="" id="image3" width="250" height="200" onclick="flipImage(2);"></div>
+                <div class="divTableCell"><img src="" id="image4" width="250" height="200" onclick="flipImage(3);"></div>
+			</div>
+            <div class="divTableRow">
+                <div class="divTableCell"><img src="" id="image5" width="250" height="200" onclick="flipImage(4);"></div>
+                <div class="divTableCell"><img src="" id="image6" width="250" height="200" onclick="flipImage(5);"></div>
+                <div class="divTableCell"><img src="" id="image7" width="250" height="200" onclick="flipImage(6);"></div>
+                <div class="divTableCell"><img src="" id="image8" width="250" height="200" onclick="flipImage(7);"></div>
+            </div>
+        </div>
+   
     </div>
 
     <footer id="copyright" class="fluid">
