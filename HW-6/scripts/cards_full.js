@@ -68,7 +68,7 @@ function flipImage(number)
     if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
 		numtries = numtries + 1;
-		//return numtries;
+		return numtries;
 		console.log(numtries);
 	
         setTimeout(imagesDisappear, 1000); // calls a method after 1 second
@@ -77,13 +77,14 @@ function flipImage(number)
     else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
 		numtries = numtries + 1;
-		//return numtries;
+		return numtries;
 		console.log(numtries);
 	
 		goodtries = goodtries + 1;
+		return goodtries;
 		console.log(goodtries);
 		
-		if (goodtries >3){
+		if (goodtries == 4){
 			gamedone();
 		}
 		
