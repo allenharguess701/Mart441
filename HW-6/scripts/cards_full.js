@@ -12,7 +12,7 @@ var player = {"firstname":"", "lastname":"", "age":"", "numtries":""};
 // create a variable with the blank image name
 // create a empty array for the actual images
 var actualImages = new Array();
-
+    
 function printBlanks()
 {
    // call our random image creation function
@@ -20,10 +20,10 @@ function printBlanks()
     // create a for loop
     for(var i = 0; i < imageNames.length; i++)
     {
-    // iterate through the image tag ids and sets the source
+    // iterate through the image tag ids and sets the source 
         document.getElementById(imageNames[i]).src= blankImagePath;
     }
-
+         
 }
 
 function createRandomImageArray()
@@ -45,54 +45,53 @@ function createRandomImageArray()
             // then add one to the array that makes sure only two images can be added
             count[randomNumber] = count[randomNumber] + 1;
         }
-    }
+    }   
 }
 
 function flipImage(number)
-{
+{     
     // make the second image appear
     if(firstNumber >= 0)
     {
         secondNumber = number;
         document.getElementById(imageNames[number]).src = actualImages[secondNumber];
-
+        
     }
     else if(firstNumber < 0) // make the first image appear
     {
         firstNumber = number;
         document.getElementById(imageNames[firstNumber]).src= actualImages[firstNumber];
-
+    
     }
 
     // check to see if the images do not match
     if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
 		numtries = numtries + 1;
-		return numtries;
+		//return numtries;
 		console.log(numtries);
-
+	
         setTimeout(imagesDisappear, 1000); // calls a method after 1 second
     }
     // check to see if the images do match
     else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
     {
 		numtries = numtries + 1;
-		return numtries;
+		//return numtries;
 		console.log(numtries);
-
+	
 		goodtries = goodtries + 1;
-		return goodtries;
 		console.log(goodtries);
-
-		if (goodtries == 4){
+		
+		if (goodtries >3){
 			gamedone();
 		}
-
+		
 	    firstNumber = -1;
-      secondNumber = -1;
+        secondNumber = -1;
     }
-
-
+    
+   
 
 }
 
@@ -113,11 +112,11 @@ function addToPlayer()
     localStorage.setItem("playerInfo", JSON.stringify(player));
 	    window.location = "matching_full.html";
 	var lastName = document.getElementById("txtLastName").value;
-	player.lastname = lastName;
+	player.lastname = lastName;    
     localStorage.setItem("playerInfo", JSON.stringify(player));
 	    window.location = "matching_full.html";
-	var playerAge = document.getElementById("txtAge").value;
-	player.age = playerAge;
+	var playerAge = document.getElementById("txtAge").value;	
+	player.age = playerAge;	
     localStorage.setItem("playerInfo", JSON.stringify(player));
     	window.location = "matching_full.html";
 
@@ -131,14 +130,14 @@ function playerInfo()
 {
     var playerInformation = localStorage.getItem("playerInfo");
     player = JSON.parse(playerInformation);
-
+    
 	console.log(player.firstname);
     console.log(player.lastname);
 	console.log(player.age);
 	console.log(player.numtries);
 }
 
-function gamedone()
+function gamedone() 
 {
     player.numtries = numtries;
     localStorage.setItem("playerInfo", JSON.stringify(player));
@@ -146,7 +145,7 @@ function gamedone()
     console.log(player.numtries);
 }
 
-function results()
+function results() 
 {
     var playerInformation = localStorage.getItem("playerInfo");
     player = JSON.parse(playerInformation);
