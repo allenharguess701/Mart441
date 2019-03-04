@@ -1,6 +1,6 @@
 var picArray = new Array();
 var randnum = Math.floor((Math.random() * 10) + 1);
-var pictureurl = ['images\one.jpg', 'images\two.jpg', 'images\three.jpg', 'images\four.jpg', 'images\five.jpg', 'images\six.jpg', 'images\seven.jpg', 'images\eight.jpg', 'images\nine.jpg', 'images\ten.png'];
+var pictureurl = ['one.jpg', 'two.jpg', 'three.jpg', 'four.jpg', 'five.jpg', 'six.jpg', 'seven.jpg', 'eight.jpg', 'nine.jpg', 'ten.png'];
 
 class Picture
 {
