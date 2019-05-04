@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>DUNE: Angels of War</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/script.js"></script>
+
+</head>
+<body>
+
+<div class="header"></div>
+	<div class="navcon">
+		
+			<a href="index.html">HOME</a>
+			<a href="index.html">DUNE: AoW</a>
+			<a href="index.html">CONTROLS</a>
+			<a href="index.html">HOW TO PLAY</a>
+			<a href="index.html">MEDIA</a>
+			<a href="index.html">CONTACT US</a>
+		
+	</div>
+	<div class="container clearfix">
+		
+		<div class="column left"><br>
+			<a href="index.html" class="class2">Inventory</a><br>
+			<a href="index.html" class="class2">Character Sheet</a><br>
+			<a href="index.html" class="class2">Exit: Save</a><br>
+			<a href="index.html" class="class2">Exit: Without Saving</a><br>
+			<br><br><br>
+			<center><img src="images/dune.jpg"></center><br><br><br><br>
+			<img src="images/guild_L.gif">
+		</div> 
+		
+		<div class="column middle ">
+			<center><br><br><img src="images/join.gif" alt="Join Today"/><br><br></center>
+			
+			
+			<div id="question">
+				<br><br>DUNE: Angels of war,<br><br>
+				Dune:AoW is a turn based text game that takes you through the events of the Frank Herbert novel "Dune" 
+				You play Paul Atreides son of Duke Leto Areites, head with your family to take over the Arakis Fiefdom.<br><br>
+				The real question is can you survive the truth if it.<br><br> A beginning is a very delicate time. Know then, 
+				that is is the year 10191. The known universe is ruled by the Padishah Emperor Shaddam the Fourth, my father. 
+				In this time, the most precious substance in the universe is the spice Melange. The spice extends life.<br><br>
+				
+				The spice is vital to space travel. The Spacing Guild and its navigators, who the spice has mutated over 4000 years,
+				 use the orange spice gas, which gives them the ability to fold space. That is, travel to any part of the universe 
+				 without moving. Because the Guild controls all interplanetary travel, they are the highest power in the Universe. 
+				 The Spice also plays a very secret role in the Bene Gesserit sisterhood, of which I am a part. The sisterhood has 
+				 been interfering with the marriages, and the children thereof, of the great Houses of the Universe, cleverly 
+				 intermixing one bloodline with another to form the Kwisatz Haderach, a super being. They plan to control this super 
+				 being and use his powers for their own selfish purposes. The breeding plan has been carried out in a strict manner 
+				 for 90 generations. The goal of the super being is in sight. But now, so close to the prize, a Bene Gesserit woman, 
+				 Jessica, the bound concubine of Duke Leto Atreides, who has been ordered to bear only daughters, has given birth to 
+				 a son. Oh, yes. I forgot to tell you. The spice exists on only one planet in the entire universe. A desolate, dry 
+				 planet with vast deserts. Hidden away within the rocks of these deserts are a people known as the Fremen, who have 
+				 long held a prophecy that a man would come, a messiah, who would lead them to true freedom. The planet is Arrakis, 
+				 also known as Dune. <br><br>
+				 
+				 You wake in your estate room to find a holo playing of Dr Yueh instructing you on the deatails of the planet Arakis and 
+				 the massive dune worms that live their. You must have fallen asleep while studying. You throw a shirt at the holo projector.
+				<br><br>just then you mother; the Lady Jessica enters the room.<br><br>
+				"Dr Yueh would not approve." She instructs you.<br><br>
+				You scoff at her. Picking up the shirt off the floo, she speaks again. This time her voice solem and dark.<br><br>
+				"The Bene Gesserit Reverend Mother Gaius Helen Mohiam has requested your presence. I'd like you to see yer."<br><br>
+				<br><br>Your Options:<br><br>
+				<font  class="fontshadow">
+				1. Agree to the meeting and follow your mother to the proper place<br>
+				2. Refuse the meeting: Stay in your room<br> 
+				3. Refuse the meeting: Leave you room <br>
+				</font><br><br>
+			</div>
+				<br><br>
+
+		<center><input type="text" size="30" id="choice" value="Agree, Stay, Leave"></center>
+        <center><button id="btnSubmit" onclick="getChoice1();">MAKE YOUR CHOICE</button></center>
+
+        <center><input type="text" size="40" id="choice2" value="Continue, Turn Around, or Sneak Off" style="display:none"></center>
+        <center><button id="btnSubmit2" onclick="getChoice2();"  style="display:none">MAKE YOUR CHOICE</button></center>
+
+        <center><input type="text" size="30" id="choice2a" value="Answer, Stay Silent, Escape"  style="display:none"></center>
+        <center><button id="btnSubmit2a" onclick="getChoice2a();" style="display:none">MAKE YOUR CHOICE</button></center>
+
+        <center><input type="text" size="55" id="choice2b" value="Three lefts and a right, Three rights and a left"  style="display:none"></center>
+        <center><button id="btnSubmit2b" onclick="getChoice2b();" style="display:none">MAKE YOUR CHOICE</button></center>
+
+       <center> <input type="text" size="40" id="choice3" value="Comply, Stand Your Ground, Run Away"  style="display:none"></center>
+       <center> <button id="btnSubmit3" onclick="getChoice3();" style="display:none">MAKE YOUR CHOICE</button></center>
+
+        <center><input type="text" size="40" id="choice3b" value="Comply, Stand Your Ground, Run Away"  style="display:none"></center>
+        <center><button id="btnSubmit3b" onclick="getChoice3b();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+
+        <center><input type="text" size="30" id="choice3c" value="Comply, Stand Your Ground, Run Away"  style="display:none"></center>
+        <center><button id="btnSubmit3c" onclick="getChoice3c();" style="display:none">MAKE YOUR CHOICE</button></center>
+
+        <center><input type="text" size="40" id="choice4" value="Tell The Truth, Lie, Stay Silent"  style="display:none"></center>
+        <center><button id="btnSubmit4" onclick="getChoice4();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="40" id="choice5" value="Do as you are told, Turn Around"  style="display:none"></center>
+        <center><button id="btnSubmit5" onclick="getChoice5();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="65" id="choice5a" value="Refuse: Struggle, Refuse: Do nothing, Give into your compulsion"  style="display:none"></center>
+        <center><button id="btnSubmit5a" onclick="getChoice5a();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="60" id="choice7" value="Keep your hand in the box, Call her Bluff"  style="display:none"></center>
+        <center><button id="btnSubmit7" onclick="getChoice7();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="60" id="choice7a" value="Keep your hand in the box, Call her Bluff"  style="display:none"></center>
+        <center><button id="btnSubmit7a" onclick="getChoice7a();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="60" id="choice8" value="Continue to struggle, Give into your compulsion"  style="display:none"></center>
+        <center><button id="btnSubmit8" onclick="getChoice8();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="65" id="choice9" value="Keep your hand in the box, Take your hand from the box"  style="display:none"></center>
+        <center><button id="btnSubmit9" onclick="getChoice9();" style="display:none">MAKE YOUR CHOICE</button></center>
+		
+        <center><input type="text" size="65" id="choice11" value="Keep your hand in the box, Take your hand from the box"  style="display:none"></center>
+        <center><button id="btnSubmit11" onclick="getChoice11();" style="display:none">MAKE YOUR CHOICE</button></center>
+				
+	    <center><input type="text" size="65" id="choice12" value="Keep your hand in the box, Take your hand from the box"  style="display:none"></center>
+        <center><button id="btnSubmit12" onclick="getChoice12();" style="display:none">MAKE YOUR CHOICE</button></center>			
+        
+		
+        </center></div><center>
+		
+		<div class="column right">
+			
+			SEONDARY LINKS<br><br>
+   			<a href="index.html" class="class2">Invite Request</a><br>
+    		<a href="index.html" class="class2">Game Guides</a><br>
+    		<a href="index.html" class="class2">FaQ’s</a><br>
+    		<a href="index.html" class="class2">Downloads</a><br>
+    		<a href="index.html" class="class2">WordPress Theme</a><br>
+       		<a href="index.html" class="class2">In-Game Add-On</a><br>
+        	<a href="index.html" class="class2">Our-Game Add-On</a><br>
+        	<a href="index.html" class="class2">Must Have Add-Ons</a><br>
+        	<a href="index.html" class="class2">Web Applications</a><br>
+    		<a href="index.html" class="class2">Legal Stuff</a><br>
+			<br><br><center><img src="images/guild_L2.gif"><br>
+			<img src="images/Paul_atreides.jpg"><br><br> Paul Atreides</center>
+		 </div>
+	</center></div><center>
+<footer id="copyright" class="fluid">
+	Harguess.com Copyright 2019 All Rights Reserved<br>
+</footer>
+	<div id="spacer" class="fluid">
+	<center><img src="images/hh-sig.png" alt="My Signature"/><br><br><img src="images/longliveani.gif" alt="Long Live The Fighters"/></center><br><br>
+</div>
+
+</center></body>
+</html>
